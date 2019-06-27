@@ -3,23 +3,22 @@ import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Question from "../components/question"
-import DaysAgo from "../components/daysago"
 import { rhythm } from "../utils/typography"
 
 class BlogIndex extends React.Component {
   render() {
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
-    const allQuestions = data.allGoogleSheetMostRecentRow.edges
+    const allPosts = data.allPosts.edges
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
-          title="Hack Oregon Weekly Status Updates"
+          title="Jaron Heard"
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
         />
-        {allQuestions.map(({ node }) => {
+        <h1>Hi</h1>
+        {allPosts.map(({ node }) => {
           return (
             <section
               style={{
@@ -32,25 +31,8 @@ class BlogIndex extends React.Component {
                   color: "#AAA4AB",
                 }}
               >
-                {node.team}
+                {node.title}
               </h2>
-              <DaysAgo date={node.date} />
-              <Question
-                question="What did your team do this week?"
-                answer={node.whatdidyourteamdothisweek}
-              />
-              <Question
-                question="What is your team going to do next week?"
-                answer={node.whatisyourteamgoingtodonextweek}
-              />
-              <Question
-                question="What does your team need to be successful"
-                answer={node.whatdoyouneedtobesuccessful}
-              />
-              <Question
-                question="Any roadblocks?"
-                answer={node.anyroadblocks}
-              />
             </section>
           )
         })}
@@ -68,18 +50,13 @@ export const pageQuery = graphql`
         title
       }
     }
-    allGoogleSheetMostRecentRow (
-      sort: { fields: [date], order: DESC }
-      
-    ) {
+    allPosts(limit: 1000) {
       edges {
         node {
-          date
-          team
-          whatdidyourteamdothisweek
-          whatisyourteamgoingtodonextweek
-          whatdoyouneedtobesuccessful
-          anyroadblocks
+          id
+          link
+          slug
+          title
         }
       }
     }

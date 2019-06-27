@@ -75,11 +75,21 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-source-google-sheets",
+      resolve: `gatsby-source-firebase`,
       options: {
-        spreadsheetId: "1jfkhYvkMdF0nxYpA2NR7uGNCRn1XzbeHN1qOnjGbIUE",
-        worksheetTitle: "Most Recent",
-        credentials: require("./secret/client-secret.json"),
+        // point to the firebase private key downloaded
+        credential: require("./firebase-key.json"),
+
+        // your firebase database root url
+        databaseURL: "https://jarondotclub.firebaseio.com/",
+
+        // you can have multiple "types" that point to different paths
+        types: [
+          {
+            type: "posts",
+            path: "posts",
+          },
+        ],
       },
     },
   ],
