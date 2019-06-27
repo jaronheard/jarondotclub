@@ -1,3 +1,37 @@
+const dotenv = require("dotenv")
+
+if (process.env.ENVIRONMENT !== "production") {
+  dotenv.config()
+}
+
+const {
+  firebase_type,
+  firebase_project_id,
+  firebase_private_key_id,
+  firebase_private_key,
+  firebase_client_email,
+  firebase_client_id,
+  firebase_auth_uri,
+  firebase_token_uri,
+  firebase_auth_provider_x509_cert_url,
+  firebase_client_x509_cert_url,
+} = process.env
+
+const firebaseAuth = {
+  type: firebase_type,
+  project_id: firebase_project_id,
+  private_key_id: firebase_private_key_id,
+  private_key: firebase_private_key.replace(/\\n/g, "\n"),
+  client_email: firebase_client_email,
+  client_id: firebase_client_id,
+  auth_uri: firebase_auth_uri,
+  token_uri: firebase_token_uri,
+  auth_provider_x509_cert_url: firebase_auth_provider_x509_cert_url,
+  client_x509_cert_url: firebase_client_x509_cert_url,
+}
+
+console.log(firebaseAuth)
+
 module.exports = {
   siteMetadata: {
     title: `🛹jaronDOTclub🛹`,
@@ -78,7 +112,7 @@ module.exports = {
       resolve: `gatsby-source-firebase`,
       options: {
         // point to the firebase private key downloaded
-        credential: require("./firebase-key.json"),
+        credential: firebaseAuth,
 
         // your firebase database root url
         databaseURL: "https://jarondotclub.firebaseio.com/",
