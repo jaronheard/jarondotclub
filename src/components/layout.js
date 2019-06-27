@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 
 import { rhythm, scale } from "../utils/typography"
+import { strikethrough } from "ansi-colors"
 
 class Layout extends React.Component {
   render() {
@@ -10,10 +11,7 @@ class Layout extends React.Component {
     const description = (
       <p>
         <em>
-          Updates from Hack Oregon teams, populated by{" "}
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdlLUPDCcReqxorFx-Fw_PZC3SRbXL4ycGaw5ZC3AvUUZ7YqQ/viewform">
-            this form
-          </a>
+          <small>all posts are collaborative g**gle docs</small>
         </em>
       </p>
     )
@@ -70,12 +68,24 @@ class Layout extends React.Component {
           padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
         }}
       >
-        <header>{header}{description}</header>
+        <header>
+          {header}
+          {description}
+        </header>
         <main>{children}</main>
         <footer>
-          <a href="https://github.com/jaronheard/hack-oregon-weekly-survey">
-            <em>Improve this on GitHub</em>
+          <a
+            style={{
+              boxShadow: `none`,
+              textDecoration: `none`,
+              color: `inherit`,
+            }}
+            href="https://github.com/jaronheard/jarondotclub"
+          >
+            😹 <em>GitHub</em>
           </a>
+          <br />
+          🤙 <em>+1-971-998-7180</em>
         </footer>
       </div>
     )

@@ -1,11 +1,11 @@
 module.exports = {
   siteMetadata: {
-    title: `Hack Oregon 🔮 Weekly Status Updates`,
-    author: `CIVIC Overlords`,
-    description: `Weekly updates`,
+    title: `🛹jaronDOTclub🛹`,
+    author: `Jaron Heard`,
+    description: `INTERNET`,
     siteUrl: `https://dazzling-newton-967394.netlify.com/`,
     social: {
-      twitter: `hackoregon`,
+      twitter: `jaronheard`,
     },
   },
   plugins: [

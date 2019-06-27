@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
+import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -17,7 +18,6 @@ class BlogIndex extends React.Component {
           title="Jaron Heard"
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
         />
-        <h1>Hi</h1>
         {allPosts.map(({ node }) => {
           return (
             <section
@@ -31,7 +31,16 @@ class BlogIndex extends React.Component {
                   color: "#AAA4AB",
                 }}
               >
-                {node.title}
+                <Link
+                  style={{
+                    boxShadow: `none`,
+                    textDecoration: `none`,
+                    color: `inherit`,
+                  }}
+                  to={`/${node.slug}`}
+                >
+                  📜 {node.title}
+                </Link>
               </h2>
             </section>
           )

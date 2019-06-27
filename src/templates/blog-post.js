@@ -15,6 +15,13 @@ class BlogPostTemplate extends React.Component {
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title={post.title} />
         <h1>{post.title}</h1>
+        <div
+          style={{
+            marginBottom: rhythm(0.5),
+            marginTop: rhythm(0.5),
+          }}
+          dangerouslySetInnerHTML={{ __html: post.docLink }}
+        />
         <div dangerouslySetInnerHTML={{ __html: post.link }} />
         <hr
           style={{
@@ -66,6 +73,7 @@ export const pageQuery = graphql`
       link
       slug
       title
+      docLink
     }
   }
 `
