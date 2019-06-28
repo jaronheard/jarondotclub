@@ -73,6 +73,8 @@ class Layout extends React.Component {
         </header>
         <main>{children}</main>
         <footer>
+          🤙 <em>+1-971-998-7180</em>
+          <br />
           <a
             style={{
               boxShadow: `none`,
@@ -83,8 +85,6 @@ class Layout extends React.Component {
           >
             😹 <em>GitHub</em>
           </a>
-          <br />
-          🤙 <em>+1-971-998-7180</em>
         </footer>
       </div>
     )

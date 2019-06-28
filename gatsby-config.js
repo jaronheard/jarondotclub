@@ -34,7 +34,7 @@ console.log(firebaseAuth)
 
 module.exports = {
   siteMetadata: {
-    title: `🛹jaronDOTclub🛹`,
+    title: `🛹 jaron.club 🛹`,
     author: `Jaron Heard`,
     description: `INTERNET`,
     siteUrl: `https://dazzling-newton-967394.netlify.com/`,
