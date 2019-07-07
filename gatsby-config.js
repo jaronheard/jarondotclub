@@ -102,6 +102,7 @@ module.exports = {
     },
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-favicon`,    
     {
       resolve: `gatsby-plugin-typography`,
       options: {
