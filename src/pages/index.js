@@ -29,6 +29,7 @@ class BlogIndex extends React.Component {
                 style={{
                   marginBottom: rhythm(1 / 4),
                   color: "#AAA4AB",
+                  textIndent: "-1.9rem",
                 }}
               >
                 <Link
