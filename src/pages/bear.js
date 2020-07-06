@@ -33,6 +33,7 @@ class Bear extends React.Component {
             <a
               href="https://mail.superhuman.com/jaron@civicsoftwarefoundation.org#app"
               style={{ color: "#AAA4AB" }}
+              target="_blank"
             >
               🦸‍♀️Inbox
             </a>
