@@ -9,22 +9,36 @@ class Bear extends React.Component {
     const siteTitle = data.site.siteMetadata.title
 
     return (
-        <section
+      <section
+        style={{
+          margin: rhythm(1 / 2),
+        }}
+      >
+        <ul
           style={{
-            marginBottom: rhythm(2),
+            marginBottom: rhythm(1 / 4),
+            color: "#AAA4AB",
+            fontFamily: `-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
           }}
         >
-          <h2
-            style={{
-              marginBottom: rhythm(1 / 4),
-              color: "#AAA4AB",
-            }}
-          >
-            <a href="bear://x-callback-url/untagged?show_window=yes">
+          <li>
+            <a
+              href="bear://x-callback-url/untagged?show_window=yes"
+              style={{ color: "#AAA4AB" }}
+            >
               🐻 Inbox
             </a>
-          </h2>
-        </section>
+          </li>
+          <li>
+            <a
+              href="https://mail.superhuman.com/jaron@civicsoftwarefoundation.org#app"
+              style={{ color: "#AAA4AB" }}
+            >
+              🦸‍♀️Inbox
+            </a>
+          </li>
+        </ul>
+      </section>
     )
   }
 }
